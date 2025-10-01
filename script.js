@@ -435,8 +435,7 @@ document.addEventListener('DOMContentLoaded', function() {
         trackEvent('checkout_started');
         
         // Redirecionar para página de checkout
-        // Substitua pela URL real do seu sistema de checkout
-        window.location.href = 'https://checkout.natyflora.com.br/kit-tira-manchas';
+        window.location.href = 'https://checkout.natyfloracosmeticos.shop/VCCL1O8SCBKX';
     }
     
     // Smooth Scroll para links internos
