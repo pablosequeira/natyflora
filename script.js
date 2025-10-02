@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const CONFIG = {
         countdownEndTime: new Date().getTime() + (10 * 60 * 1000), // 10 minutos
         whatsappNumber: '5517981103203',
-        whatsappMessage: 'Olá! Gostaria de comprar o Kit Tira Manchas NatyFLORA por R$ 99,90 (50% de desconto)!',
+        whatsappMessage: 'Olá! Gostaria de comprar o Kit Tira Manchas NatyFLORA Original por R$ 99,90 (50% de desconto)!',
         trackingEvents: {
             ctaClick: 'cta_click',
             faqOpen: 'faq_open',
@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <div class="modal-body">
                         <div class="product-summary">
-                            <h4>Kit Tira Manchas NatyFLORA</h4>
+                            <h4>Kit Tira Manchas NatyFLORA Original</h4>
                             <div class="price-breakdown">
                                 <div class="price-line">
                                     <span>Valor original:</span>

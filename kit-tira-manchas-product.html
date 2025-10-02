@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kit Tira Manchas NatyFLORA Original - Imagem do Produto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .product-container {
+            width: 800px;
+            height: 600px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Fundo decorativo */
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .kit-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            z-index: 2;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        /* Sabonete Líquido */
+        .liquid-soap {
+            width: 120px;
+            height: 200px;
+            background: linear-gradient(180deg, #4a90e2 0%, #357abd 100%);
+            border-radius: 15px 15px 8px 8px;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transform: rotate(-5deg);
+        }
+
+        .liquid-soap::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 15px;
+            right: 15px;
+            height: 120px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
+            border-radius: 8px;
+        }
+
+        .liquid-soap::after {
+            content: 'NatyFLORA';
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            width: 80px;
+        }
+
+        .liquid-cap {
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 25px;
+            height: 15px;
+            background: #ffd700;
+            border-radius: 3px;
+        }
+
+        /* Sabonete em Barra */
+        .bar-soap {
+            width: 100px;
+            height: 60px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            transform: rotate(2deg);
+        }
+
+        .bar-soap::before {
+            content: 'NatyFLORA';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #333;
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+            width: 80px;
+        }
+
+        .bar-soap::after {
+            content: 'TIRA MANCHAS';
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #666;
+            font-size: 8px;
+            font-weight: bold;
+            text-align: center;
+            width: 80px;
+        }
+
+        /* Creme/Pomada */
+        .cream {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            border-radius: 12px;
+            position: relative;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            transform: rotate(-3deg);
+        }
+
+        .cream::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            height: 50px;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 8px;
+        }
+
+        .cream::after {
+            content: 'CREME TIRA MANCHAS';
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #333;
+            font-size: 8px;
+            font-weight: bold;
+            text-align: center;
+            width: 70px;
+        }
+
+        /* Informações do kit */
+        .kit-info {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .kit-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .kit-contents {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .content-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .content-item h4 {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .content-item p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .benefits {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .benefit {
+            background: #4caf50;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .benefit:nth-child(2) {
+            background: #2196f3;
+        }
+
+        .benefit:nth-child(3) {
+            background: #ff9800;
+        }
+
+        .benefit:nth-child(4) {
+            background: #9c27b0;
+        }
+
+        /* Elementos decorativos */
+        .decorative-element {
+            position: absolute;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .decorative-element:nth-child(1) {
+            width: 60px;
+            height: 60px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .decorative-element:nth-child(2) {
+            width: 40px;
+            height: 40px;
+            top: 20%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .decorative-element:nth-child(3) {
+            width: 30px;
+            height: 30px;
+            bottom: 15%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Responsivo */
+        @media (max-width: 800px) {
+            .product-container {
+                width: 100%;
+                max-width: 800px;
+                height: auto;
+                min-height: 600px;
+            }
+            
+            .kit-display {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .kit-contents {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="product-container">
+        <!-- Elementos decorativos de fundo -->
+        <div class="bg-pattern"></div>
+        <div class="decorative-element"></div>
+        <div class="decorative-element"></div>
+        <div class="decorative-element"></div>
+
+        <!-- Título -->
+        <h1 class="title">Kit Tira Manchas NatyFLORA Original</h1>
+        <p class="subtitle">Solução completa para remoção de manchas e controle de oleosidade</p>
+
+        <!-- Display dos produtos -->
+        <div class="kit-display">
+            <div class="liquid-soap">
+                <div class="liquid-cap"></div>
+            </div>
+            <div class="bar-soap"></div>
+            <div class="cream"></div>
+        </div>
+
+        <!-- Informações do kit -->
+        <div class="kit-info">
+            <h2 class="kit-title">O que está incluído no kit:</h2>
+            
+            <div class="kit-contents">
+                <div class="content-item">
+                    <h4>🧴 Sabonete Líquido</h4>
+                    <p>240mL - Limpeza profunda e controle de oleosidade</p>
+                </div>
+                <div class="content-item">
+                    <h4>🧼 Sabonete em Barra</h4>
+                    <p>90g - Uso diário para manutenção dos resultados</p>
+                </div>
+                <div class="content-item">
+                    <h4>✨ Creme Tira Manchas</h4>
+                    <p>50g - Ação antioxidante e clareamento</p>
+                </div>
+            </div>
+
+            <div class="benefits">
+                <div class="benefit">🌿 100% Natural</div>
+                <div class="benefit">⚡ Resultado em 7 dias</div>
+                <div class="benefit">🛡️ Garantia 30 dias</div>
+                <div class="benefit">🚚 Frete grátis</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Adicionar interatividade para captura de screenshot
+        document.addEventListener('DOMContentLoaded', function() {
+            // Efeito de hover nos produtos
+            const products = document.querySelectorAll('.liquid-soap, .bar-soap, .cream');
+            
+            products.forEach(product => {
+                product.addEventListener('mouseenter', function() {
+                    this.style.transform += ' scale(1.1)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                product.addEventListener('mouseleave', function() {
+                    this.style.transform = this.style.transform.replace(' scale(1.1)', '');
+                });
+            });
+
+            // Efeito de hover nos benefícios
+            const benefits = document.querySelectorAll('.benefit');
+            
+            benefits.forEach(benefit => {
+                benefit.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                benefit.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

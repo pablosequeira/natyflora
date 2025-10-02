@@ -28,21 +28,21 @@
 ></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kit Tira Manchas NatyFLORA - Oferta Especial</title>
+    <title>Kit Tira Manchas NatyFLORA Original - Oferta Especial</title>
     <meta name="description" content="Kit completo para remoção de manchas e controle de oleosidade. Sabonete líquido + barra + ação antioxidante. Oferta especial com 50% de desconto!">
     <meta name="keywords" content="tira manchas, oleosidade, sabonete, NatyFLORA, kit, oferta, desconto">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://natyflora.com.br/kit-tira-manchas">
-    <meta property="og:title" content="Kit Tira Manchas NatyFLORA - Oferta Especial">
+    <meta property="og:title" content="Kit Tira Manchas NatyFLORA Original - Oferta Especial">
     <meta property="og:description" content="Kit completo para remoção de manchas e controle de oleosidade. 50% de desconto + frete grátis!">
     <meta property="og:image" content="https://natyflora.com.br/images/kit-tira-manchas-og.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://natyflora.com.br/kit-tira-manchas">
-    <meta property="twitter:title" content="Kit Tira Manchas NatyFLORA - Oferta Especial">
+    <meta property="twitter:title" content="Kit Tira Manchas NatyFLORA Original - Oferta Especial">
     <meta property="twitter:description" content="Kit completo para remoção de manchas e controle de oleosidade. 50% de desconto + frete grátis!">
     <meta property="twitter:image" content="https://natyflora.com.br/images/kit-tira-manchas-og.jpg">
 
@@ -55,14 +55,143 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=4">
+    
+    <!-- CSS Inline para Alert -->
+    <style>
+    .alert-section {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
+        padding: 40px 0 !important;
+        border-top: 1px solid #e2e8f0 !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+    }
+    
+    .alert-container {
+        background: white !important;
+        border-radius: 16px !important;
+        padding: 30px !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+        border: 1px solid #e2e8f0 !important;
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 25px !important;
+        max-width: 900px !important;
+        margin: 0 auto !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+    
+    .alert-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #8b5cf6, #a855f7, #c084fc);
+    }
+    
+    .alert-title {
+        font-size: 1.9rem !important;
+        font-weight: 800 !important;
+        background: linear-gradient(135deg, #8b5cf6, #a855f7) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+        margin-bottom: 18px !important;
+        line-height: 1.2 !important;
+        letter-spacing: -0.5px !important;
+    }
+    
+    .alert-text {
+        font-size: 1.1rem !important;
+        color: #374151 !important;
+        line-height: 1.6 !important;
+        margin-bottom: 25px !important;
+        font-weight: 500 !important;
+    }
+    
+    .alert-text strong {
+        color: #dc2626 !important;
+        font-weight: 800 !important;
+        background: linear-gradient(135deg, #dc2626, #ef4444) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+    }
+    
+    .tip-item {
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+        background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%) !important;
+        padding: 16px 20px !important;
+        border-radius: 12px !important;
+        border-left: 4px solid #22c55e !important;
+        box-shadow: 0 2px 8px rgba(34, 197, 94, 0.1) !important;
+        transition: all 0.3s ease !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .tip-item:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15) !important;
+    }
+    
+    .tip-item span:last-child {
+        color: #166534 !important;
+        font-weight: 600 !important;
+        font-size: 1rem !important;
+    }
+    
+    /* Purchase Alert */
+    .purchase-alert {
+        background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%) !important;
+        border: 2px solid #3b82f6 !important;
+        border-radius: 12px !important;
+        padding: 15px 20px !important;
+        margin: 20px 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2) !important;
+        animation: pulse-purchase 2s infinite !important;
+    }
+    
+    .purchase-icon {
+        font-size: 1.5rem !important;
+        animation: bounce-cart 1s infinite !important;
+    }
+    
+    .purchase-text {
+        color: #1e40af !important;
+        font-weight: 600 !important;
+        font-size: 1rem !important;
+    }
+    
+    .purchase-count {
+        color: #dc2626 !important;
+        font-weight: 800 !important;
+        font-size: 1.1rem !important;
+    }
+    
+    @keyframes pulse-purchase {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.02); }
+    }
+    
+    @keyframes bounce-cart {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-3px); }
+    }
+    </style>
     
     <!-- Schema.org markup for Google -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Product",
-        "name": "Kit Tira Manchas NatyFLORA",
+        "name": "Kit Tira Manchas NatyFLORA Original",
         "description": "Kit completo para remoção de manchas e controle de oleosidade excessiva",
         "brand": {
             "@type": "Brand",
@@ -95,7 +224,6 @@
         </div>
     </header>
 
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -106,7 +234,7 @@
                     </div>
                     <h1 class="hero-title fade-in-up">
                         Kit Tira Manchas
-                        <span class="highlight">NatyFLORA</span>
+                        <span class="highlight">NatyFLORA Original</span>
                     </h1>
                     <p class="hero-subtitle fade-in-up">
                         Solução completa para remoção de manchas e controle de oleosidade excessiva
@@ -122,17 +250,17 @@
                         </div>
                         <div class="benefit-item fade-in-left">
                             <span class="check-icon">✅</span>
-                            <span>Ação Antioxidante</span>
+                            <span>Creme Antienvelhecimento 50g</span>
                         </div>
                         <div class="benefit-item fade-in-left">
                             <span class="check-icon">✅</span>
-                            <span>Uso Diário</span>
+                            <span>Produto Original</span>
                         </div>
                     </div>
                 </div>
                 <div class="hero-image">
                     <div class="product-showcase">
-                        <img src="images/kit-tira-manchas-hero.jpg" alt="Kit Tira Manchas NatyFLORA" class="product-img fade-in-right">
+                        <img src="images/kit-tira-manchas-hero.jpg" alt="Kit Tira Manchas NatyFLORA Original" class="product-img fade-in-right">
                         <div class="floating-badge">
                             <span class="badge-text">-50%</span>
                         </div>
@@ -198,14 +326,14 @@
         </div>
     </section>
 
-    <!-- Solution Section -->
+    <!-- CTA Section -->
     <section class="solution">
         <div class="container">
             <div class="solution-content">
                 <div class="solution-text">
                     <h2 class="section-title">A Solução que Você Precisa</h2>
                     <p class="solution-description">
-                        O Kit Tira Manchas NatyFLORA foi desenvolvido especificamente para combater 
+                        O Kit Tira Manchas NatyFLORA Original foi desenvolvido especificamente para combater 
                         a oleosidade excessiva e remover manchas de forma eficaz e segura.
                     </p>
                     <div class="solution-features">
@@ -230,10 +358,48 @@
                                 <p>Proteção contra danos e envelhecimento</p>
                             </div>
                         </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🌿</div>
+                            <div class="feature-content">
+                                <h4>Creme Antienvelhecimento</h4>
+                                <p>Prevenção de rugas e linhas de expressão</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="solution-image">
-                    <img src="images/kit-detalhes.jpg" alt="Detalhes do Kit Tira Manchas" class="solution-img">
+                    <img src="images/kit-detalhes.jpg" alt="Detalhes do Kit Tira Manchas NatyFLORA Original" class="solution-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alerta sobre Produtos Falsificados -->
+    <section class="alert-section">
+        <div class="container">
+            <div class="alert-container">
+                <div class="alert-icon">⚠️</div>
+                <div class="alert-content">
+                    <h2 class="alert-title">ATENÇÃO</h2>
+                    <p class="alert-text">
+                        Estão vendendo nosso produto em outros sites por preços muito baixos. 
+                        <strong>NÃO ACREDITE!</strong> 
+                        Pode ser golpe ou produto falsificado.
+                    </p>
+                    <div class="alert-tips">
+                        <div class="tip-item">
+                            <span class="tip-icon">✅</span>
+                            <span>Compre apenas no nosso site</span>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">✅</span>
+                            <span>Produto original com garantia</span>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-icon">✅</span>
+                            <span>Frete grátis e seguro</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -245,8 +411,17 @@
             <div class="cta-content">
                 <h2 class="cta-title pulse-glow">Aproveite agora!</h2>
                 <p class="cta-subtitle">
-                    Garanta seu Kit Tira Manchas NatyFLORA com 50% de desconto
+                    Garanta seu Kit Tira Manchas NatyFLORA Original com 50% de desconto
                 </p>
+                
+                <!-- Aviso de Compra Dinâmico -->
+                <div class="purchase-alert">
+                    <div class="purchase-icon">🛒</div>
+                    <div class="purchase-text">
+                        <span class="purchase-count" id="purchaseCount">12</span> pessoas compraram nos últimos minutos!
+                    </div>
+                </div>
+                
                 <div class="countdown-timer" id="countdown">
                     <div class="countdown-item">
                         <span class="countdown-number" id="minutes">10</span>
@@ -312,6 +487,13 @@
                             <span class="trust-subtitle">Até 12x sem juros</span>
                         </div>
                     </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">🏆</div>
+                        <div class="trust-content">
+                            <span class="trust-title">Produto Original</span>
+                            <span class="trust-subtitle">Garantia NatyFLORA</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -352,6 +534,11 @@
                     <h3>Frete grátis</h3>
                     <p>Frete grátis para todo o Brasil</p>
                 </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏆</div>
+                    <h3>Produto Original</h3>
+                    <p>Garantia de autenticidade e qualidade NatyFLORA</p>
+                </div>
             </div>
         </div>
     </section>
@@ -361,7 +548,7 @@
     <section class="before-after">
         <div class="container">
             <h2 class="section-title">Resultados Reais de Nossas Clientes</h2>
-            <p class="section-subtitle">Veja as transformações incríveis que o Kit Tira Manchas proporcionou</p>
+            <p class="section-subtitle">Veja as transformações incríveis que o Kit Tira Manchas NatyFLORA Original proporcionou</p>
             
             <div class="before-after-grid">
                 <div class="before-after-card">
@@ -522,10 +709,11 @@
     <section class="faq">
         <div class="container">
             <h2 class="section-title">Perguntas Frequentes</h2>
+            
             <div class="faq-list">
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>Como usar o Kit Tira Manchas?</span>
+                        <span>Como usar o Kit Tira Manchas NatyFLORA Original?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
@@ -615,5 +803,34 @@
 
     <!-- Scripts -->
     <script src="script.js?v=3"></script>
+    
+    <!-- Script para Aviso de Compra Dinâmico -->
+    <script>
+        // Aviso de compra dinâmico
+        function updatePurchaseCount() {
+            const purchaseCountElement = document.getElementById('purchaseCount');
+            if (purchaseCountElement) {
+                // Número aleatório entre 8 e 25 para simular compras
+                const randomCount = Math.floor(Math.random() * 18) + 8;
+                purchaseCountElement.textContent = randomCount;
+                
+                // Adiciona efeito de destaque quando atualiza
+                purchaseCountElement.style.transform = 'scale(1.2)';
+                purchaseCountElement.style.color = '#dc2626';
+                
+                setTimeout(() => {
+                    purchaseCountElement.style.transform = 'scale(1)';
+                }, 300);
+            }
+        }
+        
+        // Atualiza a cada 10 segundos
+        setInterval(updatePurchaseCount, 10000);
+        
+        // Atualiza imediatamente quando a página carrega
+        document.addEventListener('DOMContentLoaded', function() {
+            updatePurchaseCount();
+        });
+    </script>
 </body>
 </html>
