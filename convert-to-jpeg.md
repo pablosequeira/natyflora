@@ -23,12 +23,30 @@
 3. Configure: Width: 800, Height: 600
 4. Baixe o resultado
 
-## Método 3: Usando Node.js (Para Desenvolvedores)
+## Método 3: Conversão Automática (RECOMENDADO)
 
+### Opção A: Script Automático (Windows)
+1. **Execute o arquivo `converter.bat`** (duplo clique)
+2. O script irá:
+   - Verificar se o Node.js está instalado
+   - Instalar as dependências automaticamente
+   - Converter o HTML para JPEG
+   - Salvar como `kit-tira-manchas-product.jpg`
+
+### Opção B: PowerShell (Windows)
+1. **Execute o arquivo `converter.ps1`** no PowerShell
+2. Siga as instruções na tela
+
+### Opção C: Manual (Qualquer Sistema)
 ```bash
+# 1. Instalar dependências
 npm install puppeteer
+
+# 2. Executar conversão
+node convert-kit-to-jpeg.js
 ```
 
+### Opção D: Código Personalizado
 ```javascript
 const puppeteer = require('puppeteer');
 const fs = require('fs');
@@ -81,4 +99,5 @@ Esta imagem JPEG pode ser usada para:
 - ✅ Site de e-commerce
 - ✅ Material promocional
 - ✅ Redes sociais
+
 

@@ -1,0 +1,20 @@
+{
+  "name": "natyflora-kit-converter",
+  "version": "1.0.0",
+  "description": "Conversor do Kit Tira Manchas NatyFLORA para JPEG",
+  "main": "convert-kit-to-jpeg.js",
+  "scripts": {
+    "convert": "node convert-kit-to-jpeg.js",
+    "install-deps": "npm install puppeteer"
+  },
+  "dependencies": {
+    "puppeteer": "^21.0.0"
+  },
+  "keywords": ["natyflora", "kit", "converter", "jpeg", "screenshot"],
+  "author": "NatyFLORA",
+  "license": "MIT"
+}
+
+
+
+

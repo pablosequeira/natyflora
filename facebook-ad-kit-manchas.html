@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Ad - Kit Tira Manchas NatyFLORA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .ad-container {
+            width: 1200px;
+            height: 628px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px;
+        }
+
+        /* Elementos decorativos de fundo */
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            top: 20%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 40px;
+            height: 40px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Lado esquerdo - Texto e CTA */
+        .ad-content {
+            flex: 1;
+            z-index: 2;
+            position: relative;
+            padding-right: 40px;
+        }
+
+        .badge {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .main-title {
+            font-size: 48px;
+            font-weight: 900;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .highlight {
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .benefits-list {
+            margin-bottom: 30px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .check-icon {
+            background: #4caf50;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .price-section {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            color: rgba(255,255,255,0.7);
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .price-new {
+            font-size: 36px;
+            font-weight: 900;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .discount-badge {
+            background: linear-gradient(45deg, #ff4757, #ff6b7a);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            display: inline-block;
+            margin-left: 15px;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-size: 24px;
+            font-weight: 900;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(255,107,107,0.4);
+            transition: all 0.3s ease;
+            animation: glow 2s infinite alternate;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255,107,107,0.6);
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 10px 30px rgba(255,107,107,0.4); }
+            to { box-shadow: 0 10px 30px rgba(255,107,107,0.8); }
+        }
+
+        /* Lado direito - Produtos */
+        .products-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .kit-display {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Sabonete Líquido */
+        .liquid-soap {
+            width: 120px;
+            height: 200px;
+            background: linear-gradient(180deg, #4a90e2 0%, #357abd 100%);
+            border-radius: 15px 15px 8px 8px;
+            position: relative;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            transform: rotate(-5deg);
+        }
+
+        .liquid-soap::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 15px;
+            right: 15px;
+            height: 120px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 100%);
+            border-radius: 8px;
+        }
+
+        .liquid-soap::after {
+            content: 'NatyFLORA';
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            width: 80px;
+        }
+
+        .liquid-cap {
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 25px;
+            height: 15px;
+            background: #ffd700;
+            border-radius: 3px;
+        }
+
+        /* Sabonete em Barra */
+        .bar-soap {
+            width: 100px;
+            height: 60px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transform: rotate(2deg);
+        }
+
+        .bar-soap::before {
+            content: 'NatyFLORA';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #333;
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+            width: 80px;
+        }
+
+        .bar-soap::after {
+            content: 'TIRA MANCHAS';
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #666;
+            font-size: 8px;
+            font-weight: bold;
+            text-align: center;
+            width: 80px;
+        }
+
+        /* Creme */
+        .cream {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            border-radius: 12px;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transform: rotate(-3deg);
+        }
+
+        .cream::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            height: 50px;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 8px;
+        }
+
+        .cream::after {
+            content: 'CREME TIRA MANCHAS';
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #333;
+            font-size: 8px;
+            font-weight: bold;
+            text-align: center;
+            width: 70px;
+        }
+
+        /* Urgência */
+        .urgency-text {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,0,0,0.9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.7; }
+        }
+
+        /* Garantias */
+        .guarantees {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .guarantee-item {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+    <div class="ad-container">
+        <!-- Elementos decorativos -->
+        <div class="bg-pattern"></div>
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+
+        <!-- Texto de urgência -->
+        <div class="urgency-text">⏰ OFERTA LIMITADA!</div>
+
+        <!-- Lado esquerdo - Conteúdo -->
+        <div class="ad-content">
+            <div class="badge">🔥 OFERTA ESPECIAL</div>
+            
+            <h1 class="main-title">
+                KIT TIRA MANCHAS<br>
+                <span class="highlight">NATYFLORA</span>
+            </h1>
+            
+            <p class="subtitle">Solução completa para remoção de manchas e controle de oleosidade</p>
+            
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <span class="check-icon">✓</span>
+                    <span>Sabonete Líquido 240mL</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="check-icon">✓</span>
+                    <span>Sabonete em Barra 90g</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="check-icon">✓</span>
+                    <span>Creme Antienvelhecimento 50g</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="check-icon">✓</span>
+                    <span>100% Natural e Seguro</span>
+                </div>
+            </div>
+
+            <div class="price-section">
+                <div class="price-old">De: R$ 199,90</div>
+                <div class="price-new">
+                    Por apenas R$ 99,90
+                    <span class="discount-badge">50% OFF</span>
+                </div>
+            </div>
+
+            <button class="cta-button">
+                🛒 COMPRAR AGORA
+            </button>
+        </div>
+
+        <!-- Lado direito - Produtos -->
+        <div class="products-section">
+            <div class="kit-display">
+                <div class="liquid-soap">
+                    <div class="liquid-cap"></div>
+                </div>
+                <div class="bar-soap"></div>
+                <div class="cream"></div>
+            </div>
+        </div>
+
+        <!-- Garantias -->
+        <div class="guarantees">
+            <div class="guarantee-item">🚚 Frete Grátis</div>
+            <div class="guarantee-item">🛡️ Garantia 30 dias</div>
+            <div class="guarantee-item">💳 Parcelamento</div>
+        </div>
+    </div>
+
+    <script>
+        // Efeito de hover nos produtos
+        document.addEventListener('DOMContentLoaded', function() {
+            const products = document.querySelectorAll('.liquid-soap, .bar-soap, .cream');
+            
+            products.forEach(product => {
+                product.addEventListener('mouseenter', function() {
+                    this.style.transform += ' scale(1.1)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                product.addEventListener('mouseleave', function() {
+                    this.style.transform = this.style.transform.replace(' scale(1.1)', '');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+

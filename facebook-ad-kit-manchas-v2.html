@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Ad - Kit Tira Manchas NatyFLORA (Estilo Neumax)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .ad-container {
+            width: 1200px;
+            height: 628px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px;
+        }
+
+        /* Elementos decorativos de fundo */
+        .bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(74, 144, 226, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        /* Lado esquerdo - Produtos */
+        .products-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .kit-display {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+        }
+
+        /* Sabonete Líquido */
+        .liquid-soap {
+            width: 140px;
+            height: 220px;
+            background: linear-gradient(180deg, #2c3e50 0%, #1a252f 100%);
+            border-radius: 20px 20px 10px 10px;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            transform: rotate(-8deg);
+            border: 3px solid #4a90e2;
+        }
+
+        .liquid-soap::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 20px;
+            right: 20px;
+            height: 130px;
+            background: linear-gradient(180deg, rgba(74, 144, 226, 0.3) 0%, rgba(74, 144, 226, 0.1) 100%);
+            border-radius: 10px;
+        }
+
+        .liquid-soap::after {
+            content: 'NATYFLORA';
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            width: 100px;
+        }
+
+        .liquid-cap {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 20px;
+            background: #4a90e2;
+            border-radius: 5px;
+        }
+
+        /* Sabonete em Barra */
+        .bar-soap {
+            width: 120px;
+            height: 70px;
+            background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            transform: rotate(5deg);
+            border: 2px solid #4a90e2;
+        }
+
+        .bar-soap::before {
+            content: 'NATYFLORA';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            width: 100px;
+        }
+
+        .bar-soap::after {
+            content: 'TIRA MANCHAS';
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #4a90e2;
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+            width: 100px;
+        }
+
+        /* Creme */
+        .cream {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            transform: rotate(-5deg);
+            border: 2px solid #4a90e2;
+        }
+
+        .cream::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.3) 0%, rgba(74, 144, 226, 0.1) 100%);
+            border-radius: 10px;
+        }
+
+        .cream::after {
+            content: 'CREME TIRA MANCHAS';
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+            width: 90px;
+        }
+
+        /* Lado direito - Conteúdo */
+        .ad-content {
+            flex: 1;
+            z-index: 2;
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .main-title {
+            font-size: 52px;
+            font-weight: 900;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .highlight {
+            color: #4a90e2;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #4a90e2, #357abd);
+            color: white;
+            border: none;
+            padding: 18px 35px;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: 900;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(74, 144, 226, 0.4);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(74, 144, 226, 0.6);
+        }
+
+        .benefits-list {
+            margin-bottom: 30px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .benefit-icon {
+            background: #4a90e2;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        /* Depoimento */
+        .testimonial {
+            background: rgba(255,255,255,0.95);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 60px;
+            color: #4a90e2;
+            font-weight: bold;
+        }
+
+        .testimonial-text {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #4a90e2, #357abd);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .author-info h4 {
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+
+        .author-info span {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Selos de confiança */
+        .trust-badges {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .trust-badge {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .anvisa-badge {
+            background: linear-gradient(45deg, #4a90e2, #357abd);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+        }
+
+        .guarantee-badge {
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        /* Urgência */
+        .urgency-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #ff4757, #ff6b7a);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body>
+    <div class="ad-container">
+        <!-- Elementos decorativos -->
+        <div class="bg-pattern"></div>
+
+        <!-- Badge de urgência -->
+        <div class="urgency-badge">⏰ OFERTA LIMITADA!</div>
+
+        <!-- Lado esquerdo - Produtos -->
+        <div class="products-section">
+            <div class="kit-display">
+                <div class="liquid-soap">
+                    <div class="liquid-cap"></div>
+                </div>
+                <div class="bar-soap"></div>
+                <div class="cream"></div>
+            </div>
+        </div>
+
+        <!-- Lado direito - Conteúdo -->
+        <div class="ad-content">
+            <h1 class="main-title">
+                VOLTE A TER<br>
+                <span class="highlight">PELE PERFEITA!</span>
+            </h1>
+            
+            <p class="subtitle">Solução completa para remoção de manchas e controle de oleosidade</p>
+
+            <button class="cta-button">
+                QUERO PELE PERFEITA AGORA
+            </button>
+
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <span>Remove manchas e melasma</span>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🧴</div>
+                    <span>Controla oleosidade excessiva</span>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✨</div>
+                    <span>Uniformiza e hidrata a pele</span>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🌿</div>
+                    <span>100% Natural e Seguro</span>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <span>Resultado em apenas 7 dias</span>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <p class="testimonial-text">
+                    Depois de uma semana usando o Kit NatyFLORA, minhas manchas diminuíram 80%! 
+                    A oleosidade também controlou muito. Estou amando os resultados!
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">M</div>
+                    <div class="author-info">
+                        <h4>Maria Silva</h4>
+                        <span>34 anos, São Paulo</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="trust-badges">
+                <div class="anvisa-badge">REGISTRADO ANVISA</div>
+                <div class="guarantee-badge">GARANTIA 30 DIAS</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Efeito de hover nos produtos
+        document.addEventListener('DOMContentLoaded', function() {
+            const products = document.querySelectorAll('.liquid-soap, .bar-soap, .cream');
+            
+            products.forEach(product => {
+                product.addEventListener('mouseenter', function() {
+                    this.style.transform += ' scale(1.1)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                product.addEventListener('mouseleave', function() {
+                    this.style.transform = this.style.transform.replace(' scale(1.1)', '');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
