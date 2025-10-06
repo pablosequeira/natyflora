@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Configurações
     const CONFIG = {
         countdownEndTime: new Date().getTime() + (24 * 60 * 60 * 1000), // 24 horas
-        whatsappNumber: '5511999999999',
+        whatsappNumber: '557599601918',
         whatsappMessage: 'Olá! Gostaria de saber mais sobre o Kit Tira Manchas NatyFLORA',
         trackingEvents: {
             ctaClick: 'cta_click',

@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Configurações
     const CONFIG = {
         countdownEndTime: new Date().getTime() + (10 * 60 * 1000), // 10 minutos
-        whatsappNumber: '5517981103203',
+        whatsappNumber: '557599601918',
         whatsappMessage: 'Olá! Gostaria de comprar o Kit Tira Manchas NatyFLORA Original por R$ 99,90 (50% de desconto)!',
         trackingEvents: {
             ctaClick: 'cta_click',
